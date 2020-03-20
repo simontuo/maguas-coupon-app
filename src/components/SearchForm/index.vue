@@ -16,10 +16,13 @@
 </template>
 
 <script>
-import { getList } from "@/api/table";
-
 export default {
-    props: ["url"],
+    props: {
+        searchFunction: {
+            type: Function,
+            default: null
+        }
+    },
     data() {
         return {
             formInline: {
@@ -34,7 +37,7 @@ export default {
     methods: {
         search() {
             this.$store.dispatch("search/loadingOn");
-            getList()
+            this.searchFunction()
                 .then(response => {
                     this.$store.dispatch("search/getData", { response });
                 })

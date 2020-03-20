@@ -1,6 +1,7 @@
 const state = {
 	loading: false,
-	data: [],
+	items: [],
+	total: 0,
 }
 
 const mutations = {
@@ -11,7 +12,8 @@ const mutations = {
 		state.loading = false
 	},
 	GET_DATA: (state, response) => {
-		state.data = response.data.items;
+		state.items = response.data.items;
+		state.total = response.data.total;
 	},
 }
 

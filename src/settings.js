@@ -32,5 +32,14 @@ module.exports = {
 	 * @type {string}
 	 * @description table szie
 	 */
-	tableSize: "medium"
+	tableSize: "medium",
+
+	/**
+	 * @type {object}
+	 * @description pagination params
+	 */
+	pagination: {
+		pageSize: 100,
+		pageSizes: [100, 200, 300, 400],
+	},
 }
