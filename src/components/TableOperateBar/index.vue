@@ -10,9 +10,19 @@
                 </el-button>
             </el-tooltip>
             <el-tooltip content="密度" placement="top">
-                <el-button type="text" class="operate-button">
+                <!-- <el-button type="text" class="operate-button">
                     <svg-icon icon-class="column-height" />
-                </el-button>
+                </el-button>-->
+                <el-dropdown class="operate-dropdown" trigger="click" @command="handleCommand">
+                    <el-button type="text" class="operate-button">
+                        <svg-icon icon-class="column-height" />
+                    </el-button>
+                    <el-dropdown-menu slot="dropdown">
+                        <el-dropdown-item command="medium">默认</el-dropdown-item>
+                        <el-dropdown-item command="small">中等</el-dropdown-item>
+                        <el-dropdown-item command="mini">紧凑</el-dropdown-item>
+                    </el-dropdown-menu>
+                </el-dropdown>
             </el-tooltip>
             <el-tooltip content="刷新" placement="top">
                 <el-button type="text" class="operate-button">
@@ -34,6 +44,11 @@ export default {
     props: ["title"],
     components: {
         Screenfull
+    },
+    methods: {
+        handleCommand(command) {
+            this.$store.dispatch("app/changeTableSize", { command });
+        }
     }
 };
 </script>
@@ -48,6 +63,15 @@ export default {
     }
     .operate-button-bar {
         float: right;
+        .operate-dropdown {
+            margin-left: 10px;
+            margin-right: 10px;
+            line-height: 1px;
+            .operate-button {
+                font-size: 16px;
+                color: #929292;
+            }
+        }
         .operate-button {
             font-size: 16px;
             color: #929292;

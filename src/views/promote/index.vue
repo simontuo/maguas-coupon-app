@@ -30,6 +30,7 @@
                 fit
                 highlight-current-row
                 header-cell-class-name="table-header"
+                :size="setting.size"
             >
                 <el-table-column align="center" type="selection" width="95"></el-table-column>
                 <el-table-column align="center" label="ID" width="95">
@@ -84,6 +85,11 @@ export default {
         Pagination,
         TableOperateBar,
         TableSelectedBar
+    },
+    computed: {
+        setting() {
+            return this.$store.state.app.table;
+        }
     },
     filters: {
         statusFilter(status) {

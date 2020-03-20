@@ -26,5 +26,11 @@ module.exports = {
 	 * @type {boolean} 
 	 * @description Whether open the sidebar
 	*/
-	openSidebar: false
+	openSidebar: false,
+
+	/**
+	 * @type {string}
+	 * @description table szie
+	 */
+	tableSize: "medium"
 }

@@ -6,7 +6,10 @@ const state = {
 		opened: Cookies.get('sidebarStatus') ? !!+Cookies.get('sidebarStatus') : defaultSettings.openSidebar,
 		withoutAnimation: false
 	},
-	device: 'desktop'
+	device: 'desktop',
+	table: {
+		size: Cookies.get('tableSize'),
+	},
 }
 
 const mutations = {
@@ -26,7 +29,11 @@ const mutations = {
 	},
 	TOGGLE_DEVICE: (state, device) => {
 		state.device = device
-	}
+	},
+	CHANGE_TABLE_SIZE: (state, tableSize) => {
+		state.table.size = tableSize
+		Cookies.set('tableSize', tableSize)
+	},
 }
 
 const actions = {
@@ -38,7 +45,10 @@ const actions = {
 	},
 	toggleDevice({ commit }, device) {
 		commit('TOGGLE_DEVICE', device)
-	}
+	},
+	changeTableSize({ commit }, tableSize) {
+		commit('CHANGE_TABLE_SIZE', tableSize.command)
+	},
 }
 
 export default {
