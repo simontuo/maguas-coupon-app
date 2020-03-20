@@ -1,5 +1,5 @@
 <template>
-    <div :class="{'has-logo':showLogo}">
+    <div :class="{'has-logo':showLogo}" style="box-shadow: 2px 0 8px 0 rgba(29,35,41,.05);">
         <logo v-if="showLogo" :collapse="isCollapse" />
         <el-scrollbar wrap-class="scrollbar-wrapper">
             <el-menu
