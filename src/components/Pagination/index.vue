@@ -8,6 +8,7 @@
         layout="total, sizes, prev, pager, next, jumper"
         :total="400"
         background
+        class="pagination"
     ></el-pagination>
 </template>
 
@@ -29,3 +30,9 @@ export default {
     }
 };
 </script>
+
+<style lang="scss" scoped>
+.pagination {
+    margin: 20px 20px 10px 20px;
+}
+</style>
