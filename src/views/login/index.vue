@@ -18,7 +18,7 @@
                 </span>
                 <el-input
                     ref="username"
-                    v-model="loginForm.username"
+                    v-model="loginForm.email"
                     placeholder="Username"
                     name="username"
                     type="text"
@@ -88,6 +88,7 @@ export default {
         return {
             loginForm: {
                 username: "admin",
+                // email: "2850132787@qq.com",
                 password: "111111"
             },
             loginRules: {
@@ -131,13 +132,35 @@ export default {
             });
         },
         handleLogin() {
+            // login(this.loginForm)
+            //     .then(response => {
+            //         this.$router.push({ path: this.redirect || "/" });
+            //         this.loading = false;
+            //     })
+            //     .catch(() => {
+            //         this.loading = false;
+            //     });
+            // this.loading = true;
+            // this.$store
+            //     .dispatch("user/login", {
+            //         username: "2850132787@qq.com",
+            //         email: "2850132787@qq.com",
+            //         password: "111111"
+            //     })
+            //     .then(() => {
+            //         this.$router.push({ path: this.redirect || "/" });
+            //         this.loading = false;
+            //     })
+            //     .catch(() => {
+            //         this.loading = false;
+            //     });
             this.$refs.loginForm.validate(valid => {
                 if (valid) {
                     this.loading = true;
                     this.$store
                         .dispatch("user/login", this.loginForm)
                         .then(() => {
-                            this.$router.push({ path: this.redirect || "/" });
+                            // this.$router.push({ path: this.redirect || "/" });
                             this.loading = false;
                         })
                         .catch(() => {
