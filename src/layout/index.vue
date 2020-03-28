@@ -11,12 +11,16 @@
                 <navbar />
             </div>
             <app-main />
+            <back-top />
+            <m-footer />
         </div>
     </div>
 </template>
 
 <script>
 import { Navbar, Sidebar, AppMain } from "./components";
+import MFooter from "./components/MFooter";
+import BackTop from "@/components/BackToTop";
 import ResizeMixin from "./mixin/ResizeHandler";
 
 export default {
@@ -24,7 +28,9 @@ export default {
     components: {
         Navbar,
         Sidebar,
-        AppMain
+        AppMain,
+        MFooter,
+        BackTop
     },
     mixins: [ResizeMixin],
     computed: {

@@ -42,4 +42,13 @@ module.exports = {
 		pageSize: 100,
 		pageSizes: [100, 200, 300, 400],
 	},
+
+	/**
+	 * @type {object}
+	 * @description footerInfo
+	 */
+	footerInfo: {
+		title: "Maguas Coupon",
+		author: "大力加冰"
+	}
 }
