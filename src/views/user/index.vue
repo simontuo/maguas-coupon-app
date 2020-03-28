@@ -5,7 +5,12 @@
         </m-card>
         <m-card type="table" class="mt-2">
             <div slot="body">
-                <table-operate-bar title="推广数据" />
+                <table-operate-bar title="推广数据">
+                    <template slot="functionButton">
+                        <el-button size="small" type="primary">操作按钮</el-button>
+                        <el-button size="small" type="primary">操作按钮</el-button>
+                    </template>
+                </table-operate-bar>
                 <table-selected-bar selected="50" />
                 <m-table class="mt-1">
                     <template slot="columns">
